@@ -28,11 +28,10 @@ import sh
 from ploigos_step_runner.step_implementer import StepImplementer, StepResult
 
 DEFAULT_CONFIG = {
-   TODO
 }
 
 REQUIRED_CONFIG_OR_PREVIOUS_STEP_RESULT_ARTIFACT_KEYS = [
-   TODO
+   'container-image-registry-uri'
 ]
 
 class HelloWorld(StepImplementer):  
@@ -75,6 +74,7 @@ class HelloWorld(StepImplementer):
             Object containing the dictionary results of this step.
         """
         step_result = StepResult.from_step_implementer(self)
-        print(f"\nTODO ************ Push Data to Nexus ****************")
+        image_url = self.get_value('container-image-registry-uri').lower()
+        print(f"\nTODO ************ Push Data to Nexus For Image: {image_url} ****************")
         return step_result
 
